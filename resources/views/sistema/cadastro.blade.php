@@ -29,6 +29,15 @@
                     }, 3000);
                 </script>
             @endif
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             <form action="/cadastrar" method="post" class="row g-3">
                 @csrf
                 <div class="col-md-12">
