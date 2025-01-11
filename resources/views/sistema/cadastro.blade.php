@@ -5,6 +5,7 @@
     <title>Cadastro</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <style>
         .full-height {
             height: 100vh;
@@ -15,6 +16,17 @@
     <div class="container d-flex justify-content-center align-items-center full-height">
         <div class="w-50">
             <h1 class="text-center mb-4">Cadastre-se</h1>
+
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                <script>
+                    setTimeout(function() {
+                        window.location.href = '/';
+                    }, 3000); // Redireciona após 3 segundos
+                </script>
+            @endif
             <form action="/cadastrar" method="post" class="row g-3">
                 @csrf
                 <div class="col-md-12">
@@ -33,7 +45,9 @@
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
             </form>
+            <a href="/" class="btn btn-secondary mb-4">Voltar</a>
         </div>
+        
     </div>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

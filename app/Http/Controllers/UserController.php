@@ -21,9 +21,10 @@ class UserController extends Controller
     }
     $usuario = User::create($dados);
     auth()->login($usuario);
-    return redirect('/lista');
-
+    return redirect()->back()->with('success', 'Usuário cadastrado!');    
     }
+
+    
 
     public function lista()
     {
@@ -43,16 +44,21 @@ class UserController extends Controller
             'email' => 'email|unique:users,email,'.$user->id,
             'password' => 'nullable|min:6|max:20',
         ]);
-        $dados['password'] = bcrypt($dados['password']);
+
+        if ($request->filled('password')) {
+            $dados['password'] = bcrypt($request->password);
+        } else {
+            unset($dados['password']);
+        }
         $user->update($dados);
 
-        return redirect('/lista');
-    }
+        return redirect()->back()->with('success', 'Dados do usuário atualizados com sucesso!');    }
 
     public function apagar(User $user)
     {
         $user->delete();
-        return redirect('/lista');
+        return redirect('/lista')->with('success', 'Usuário apagado com sucesso!');    }
+
     }
  
-}
+
