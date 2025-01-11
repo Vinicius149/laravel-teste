@@ -13,8 +13,8 @@ Este é um projeto Laravel criado como parte de um teste prático para uma vaga 
 1. Clone o repositório para o seu ambiente local:
 
 ```sh
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/Vinicius149/laravel-teste.git
+cd laravel-teste
 ```
 
 2. Instale as dependências do PHP usando o Composer:
