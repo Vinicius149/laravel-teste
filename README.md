@@ -33,7 +33,7 @@ docker run --rm \
 ```sh
 cp .env.example .env
 ```
-4. Configure o banco de dados no arquivo .env:
+4. Configure o banco de dados no arquivo .env que foi criado, mais precisamente na linha 24, o arquivo está oculto e estará visível apenas dentro do seu editor de código:
 ```sh
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -50,21 +50,22 @@ DB_PASSWORD=password
 ```sh
 ./vendor/bin/sail up
 ```
-2. Em outra janela do terminal, mas dentro da pasta do projeto, gere a chave da aplicação:
+2. Em outro terminal, mas ainda dentro da pasta do projeto, gere a chave da aplicação:
 
 ```sh
 ./vendor/bin/sail artisan key:generate
 ```
-4.Execute as migrações para criar as tabelas no banco de dados:
+
+3.Execute as migrações para criar as tabelas no banco de dados:
 
 ```sh
 ./vendor/bin/sail artisan migrate
 ```
 
-5. Acesse o projeto no seu navegador:
+4. Acesse o projeto no seu navegador:
 
 ```sh
-http://localhost:8000
+http://localhost:80
 ```
 
 # Funcionalidades
