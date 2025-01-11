@@ -4,10 +4,10 @@ Este é um projeto Laravel criado como parte de um teste prático para uma vaga 
 
 ## Requisitos
 
-Docker Desktop (Windows e Mac)
+1. Docker Desktop (Windows e Mac)
 https://docs.docker.com/desktop/setup/install/windows-install/
-ou
-docker-compose (linux)
+
+2. docker-compose (linux)
 https://docs.docker.com/compose/install/linux/
 
 
