@@ -1,9 +1,11 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuários</title>
 </head>
+
 <body>
     <h1>Lista de Usuários</h1>
     <table border="1">
@@ -20,9 +22,14 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <p><a href="/editar-usuario/{{$user->}}"></a></p>
+                    <td>
+                    <a href="/lista/{{ $user->id }}/edit">Editar</a>
+                    <form action="/lista/{{"
+
                 </tr>
             @endforeach
         </tbody>
-    </table></body>
+    </table>
+</body>
+
 </html>
