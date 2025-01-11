@@ -33,13 +33,7 @@ docker run --rm \
 ```sh
 cp .env.example .env
 ```
-
-4. Gere a chave da aplicação:
-
-```sh
-./vendor/bin/sail artisan key:generate
-```
-5. Configure o banco de dados no arquivo .env:
+4. Configure o banco de dados no arquivo .env:
 ```sh
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -49,10 +43,6 @@ DB_USERNAME=root
 DB_PASSWORD=password
 ```
 
-6. Execute as migrações para criar as tabelas no banco de dados:
-```sh
-./vendor/bin/sail artisan migrate
-```
 # Executando o Projeto
 
 1. Inicie o servidor de desenvolvimento do Laravel:
@@ -60,8 +50,18 @@ DB_PASSWORD=password
 ```sh
 ./vendor/bin/sail up
 ```
+2. Em outra janela do terminal, mas dentro da pasta do projeto, gere a chave da aplicação:
 
-2. Acesse o projeto no seu navegador:
+```sh
+./vendor/bin/sail artisan key:generate
+```
+4.Execute as migrações para criar as tabelas no banco de dados:
+
+```sh
+./vendor/bin/sail artisan migrate
+```
+
+5. Acesse o projeto no seu navegador:
 
 ```sh
 http://localhost:8000
