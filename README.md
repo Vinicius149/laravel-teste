@@ -13,7 +13,7 @@ Este é um projeto Laravel criado como parte de um teste prático para uma vaga 
 1. Clone o repositório para o seu ambiente local:
 
 ```sh
-git clone https://github.com/Vinicius149/laravel-teste.git
+git clone https://github.com/Vinicius149/laravel-teste.git &&
 cd laravel-teste
 ```
 
