@@ -64,18 +64,19 @@ http://localhost:8000
 
 # Funcionalidades
 
+```sh
 Cadastrar Usuário: Acesse /sistema para cadastrar um novo usuário.
 Listar Usuários: Acesse /lista para ver a lista de usuários cadastrados.
 Editar Usuário: Na lista de usuários, clique em "Editar" para modificar os dados de um usuário.
 Excluir Usuário: Na lista de usuários, clique em "Excluir" para remover um usuário.
-
+```
 # Estrutura do Projeto
-
+```sh
 Controllers: UserController.php
 Views: sistema e welcome.blade.php
 Rotas: web.php
 CSS: styles.css
-
+```
 
 
 Este `README.md` fornece instruções claras sobre como configurar e executar o projeto Laravel, incluindo a instalação de dependências, configuração do banco de dados, execução de migrações e início do servidor de desenvolvimento. Além disso, descreve as funcionalidades principais do projeto e a estrutura dos arquivos.
