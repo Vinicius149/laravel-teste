@@ -4,9 +4,9 @@ Este é um projeto Laravel criado como parte de um teste prático para uma vaga 
 
 ## Requisitos
 
-- PHP >= 8.2
-- Composer
-- MySQL >= 8.0
+Docker Desktop
+ou
+docker-compose
 
 ## Instalação
 
@@ -17,10 +17,15 @@ git clone https://github.com/Vinicius149/laravel-teste.git &&
 cd laravel-teste
 ```
 
-2. Instale as dependências do PHP usando o Composer:
+2. Dentro do diretório do projeto, execute o comando para criar o container com as dependências:
 
 ```sh
-composer install
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
 ```
 
 3. Copie o arquivo .env.example para .env e configure suas variáveis de ambiente, incluindo as configurações do banco de dados:
@@ -32,7 +37,7 @@ cp .env.example .env
 4. Gere a chave da aplicação:
 
 ```sh
-php artisan key:generate
+./vendor/bin/sail artisan key:generate
 ```
 5. Configure o banco de dados no arquivo .env:
 ```sh
@@ -46,14 +51,14 @@ DB_PASSWORD=password
 
 6. Execute as migrações para criar as tabelas no banco de dados:
 ```sh
-php artisan migrate
+./vendor/bin/sail artisan migrate
 ```
 # Executando o Projeto
 
 1. Inicie o servidor de desenvolvimento do Laravel:
 
 ```sh
-php artisan serve
+./vendor/bin/sail up
 ```
 
 2. Acesse o projeto no seu navegador:
