@@ -14,20 +14,33 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
+            <div>
             @foreach ($users as $user)
                 <tr>
+                    <div>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                    <a href="/lista/{{ $user->id }}/edit">Editar</a>
-                    <form action="/lista/{{"
-
-                </tr>
+                    </div>
+                    <div>
+                    <form action="/users/{{ $user->id }}/edit" method="get" style="display:inline;">
+                        @csrf
+                        <button type="submit">Editar</button>
+                    </form>
+                    <form action="/lista/{{ $user->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Tem certeza que deseja apagar o usuário?')">Excluir</button>
+                        </div>
+                    </form>               
+                    </tr>
             @endforeach
+            </div>
         </tbody>
     </table>
 </body>
